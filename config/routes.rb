@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :leaders
   get 'pages/about'
-  root to: "home#index"
+  root to: "troops#index"
 
   resources :troops
 
