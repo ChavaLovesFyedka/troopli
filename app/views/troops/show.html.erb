@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @troop.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @troop.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @troop.picture %>
+</p>
+
+<p>
+  <strong>Age level:</strong>
+  <%= @troop.age_level %>
+</p>
+
+<%= link_to 'Edit', edit_troop_path(@troop) %> |
+<%= link_to 'Back', troops_path %>

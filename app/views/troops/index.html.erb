@@ -1,0 +1,31 @@
+<h1>Listing troops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Picture</th>
+      <th>Age level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @troops.each do |troop| %>
+      <tr>
+        <td><%= troop.name %></td>
+        <td><%= troop.description %></td>
+        <td><%= troop.picture %></td>
+        <td><%= troop.age_level %></td>
+        <td><%= link_to 'Show', troop %></td>
+        <td><%= link_to 'Edit', edit_troop_path(troop) %></td>
+        <td><%= link_to 'Destroy', troop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Troop', new_troop_path %>
