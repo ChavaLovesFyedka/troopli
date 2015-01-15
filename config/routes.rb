@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/about'
+  root to: "home#index"
 
   resources :troops
 
