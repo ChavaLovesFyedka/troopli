@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   devise_for :leaders
   get 'pages/about'
   root to: "troops#index"
