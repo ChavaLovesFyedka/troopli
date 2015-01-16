@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require bootstrap.js
+//= require bootstrap.min.js
+//= require bounce.js
+//= require jqBootstrapValidation.js
+//= require jquery-1.8.3.min.js
+//= require jquery.fitvids.js
+
 //= require_tree .
