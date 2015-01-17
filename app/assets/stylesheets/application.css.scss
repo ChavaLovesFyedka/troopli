@@ -18,6 +18,8 @@
  *= require bootstrap.min.css
  *= require glyphicons.css
 
+ *= require_tree ../../../vendor/assets/stylesheets/.
+
  *
  *= require_tree .
  *= require_self

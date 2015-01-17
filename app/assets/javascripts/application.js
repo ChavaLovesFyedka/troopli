@@ -22,3 +22,5 @@
 //= require jquery.fitvids.js
 
 //= require_tree .
+
+//= require_tree ../../../vendor/assets/javascripts/.
