@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins
-  devise_for :leaders
+  devise_for :leaders, controllers: { sessions: "leaders/sessions" }
   get 'pages/about'
   root to: "troops#index"
 
