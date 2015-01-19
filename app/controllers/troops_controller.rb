@@ -1,5 +1,7 @@
 class TroopsController < ApplicationController
   before_action :set_troop, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_leader!, only: [:new]
+  before_action :set_leader, only: [:show]
 
   respond_to :html
 
@@ -13,6 +15,9 @@ class TroopsController < ApplicationController
   end
 
   def new
+    unless current_leader.admin_privileges < 50
+      redirect_to(:back)
+    end
     @troop = Troop.new
     respond_with(@troop)
   end
