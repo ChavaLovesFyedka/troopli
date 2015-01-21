@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get 'pages/about'
   root to: "troops#index"
 
+  # match '/gallery' => 'pages#gallery'
+  # match '/about' => 'pages#about'
+  # match '/contact' => 'pages#contact'
+
   resources :troops
 
   # The priority is based upon order of creation: first created -> highest priority.
