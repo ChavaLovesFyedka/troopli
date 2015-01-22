@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122085123) do
+ActiveRecord::Schema.define(version: 20150122090249) do
 
   create_table "admins", force: true do |t|
     t.string   "email",              default: "", null: false
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20150122085123) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "badges_ideas", force: true do |t|
+    t.integer  "badge_id"
+    t.integer  "idea_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "badges_ideas", ["badge_id"], name: "index_badges_ideas_on_badge_id"
+  add_index "badges_ideas", ["idea_id"], name: "index_badges_ideas_on_idea_id"
 
   create_table "ideas", force: true do |t|
     t.string   "name"

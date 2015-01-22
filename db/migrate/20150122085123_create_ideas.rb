@@ -4,6 +4,7 @@ class CreateIdeas < ActiveRecord::Migration
       t.string :name
       t.string :category
       t.string :age_level
+      t.integer :badge_id
 
       t.timestamps
     end
