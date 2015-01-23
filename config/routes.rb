@@ -3,8 +3,16 @@ Rails.application.routes.draw do
   devise_for :leaders, controllers: { sessions: "leaders/sessions" }
   get 'pages/about'
   root to: "troops#index"
+  get "pages/blog"
   get "pages/contact" #, :as => 'contact_page'
-
+  get "pages/calendar"
+  get "pages/badgetracker"
+  get "pages/budget"
+  get "pages/gallery"
+  get "pages/jobs"
+  get "pages/meeting"
+  get "pages/newsletter"
+  get "pages/scoutlist"
   # match '/gallery' => 'pages#gallery'
   # match '/about' => 'pages#about'
   # match '/contact' => 'pages#contact'
