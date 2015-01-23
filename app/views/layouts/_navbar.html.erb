@@ -1,3 +1,12 @@
+<p class="navbar-text pull-right">
+<% if leader_signed_in? %>
+  Logged in as <strong><%= current_leader.email %></strong>.
+  <%= link_to 'Edit profile', edit_leader_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_leader_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_leader_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_leader_session_path, :class => 'navbar-link'  %>
+<% end %>
 
   <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -10,31 +19,14 @@
           <a class="brand" href="index.html">Troopli</a>
       <div class="nav-collapse collapse">
             <ul class="nav pull-right animated">
-        <li class="dropdown active">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">Home <b class="caret"></b></a>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="index.html" tabindex="-1">Default Home</a></li>
-          <li><a href="alt.html" tabindex="-1">Alternative Home</a></li>
-        </ul>
-        </li>
-              <li><a href="about.html">About</a></li>     
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">Features <b class="caret"></b></a>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="blog.html" tabindex="-1">Blog</a></li>
-          <li><a href="single.html" tabindex="-1">Blog Single</a></li>
-          <li><a href="dividers.html" tabindex="-1">Dividers</a></li>
-        </ul>
-        </li>
-        <li><a href="pricing.html">Blog</a></li>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><a href="/pages/about">About</a></li>     
+        <li><a href="http://www.troopli.wordpress.com">Blog</a></li>
+        <li><a href="http://troopli.freeforums.net">Message Board</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a href="register.html">Register</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#">Contact <b class="caret"></b></a>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="contact.html" tabindex="-1">Default Contact</a></li>
-          <li><a href="contact2.html" tabindex="-1">Alternative Contact</a></li>
-        </ul>
+        <li><a href="/pages/contact">Contact</a></li> 
+
         </li>
             </ul>
       </div>
