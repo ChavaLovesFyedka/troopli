@@ -10,3 +10,5 @@ OfficialBadgeParser.new
 
 badgeparser1 = Parser.new('./Patches1.csv')
 badgeparser1.badge_list
+
+#Badges 
