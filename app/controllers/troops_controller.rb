@@ -7,6 +7,7 @@ class TroopsController < ApplicationController
 
   def index
     @troops = Troop.all
+    
     respond_with(@troops)
   end
 

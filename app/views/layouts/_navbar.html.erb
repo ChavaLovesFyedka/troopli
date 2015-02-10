@@ -23,8 +23,10 @@
         <li><a href="/pages/about">About</a></li>     
         <li><a href="http://www.troopli.wordpress.com">Blog</a></li>
         <li><a href="http://troopli.freeforums.net">Message Board</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
+        <% if not leader_signed_in? %>
+        <li><%= link_to "Login", new_leader_session_path, :class => 'navbar-link'  %></li>
+        <li><%= link_to "Sign up", new_leader_registration_path, :class => 'navbar-link'  %></li>
+        <% end %>
         <li><a href="/pages/contact">Contact</a></li> 
 
         </li>
