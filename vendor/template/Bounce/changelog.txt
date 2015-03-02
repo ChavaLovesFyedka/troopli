@@ -1,0 +1,82 @@
+Bounce Template Changelog
+=========================
+=========================
+
+Bounce V2.2 - Coming Soon
+
+ -- Documentation
+
+ -- Portfolio
+
+ -- Gallery
+
+ -- FAQ page
+
+ -- User profile page
+
+ -- Multiple colors
+
+ -- Bootstrap v3 version
+
+
+
+Bounce V2.1 - Current Release
+
+ -- Updated to latest version of Bootstrap (v2.2.2)
+
+ -- Updated jquery (v1.8.3)
+
+ -- Updated FitVids.js (http://fitvidsjs.com/)
+
+ -- Added form validation (https://github.com/ReactiveRaven/jqBootstrapValidation)
+
+ -- Added blog pages
+
+ -- Added some content dividers
+
+ -- Added alternative contact page
+
+ -- Navbar now supports dropdowns
+
+ -- Updated alternative homepage
+
+ -- Updated login/register forms
+
+ -- Cleaned up css and html code
+
+ -- Moved custom js to bounce.js
+
+ -- Replaced Font Awesome with Glyphicons Pro (http://glyphicons.com/)
+
+
+Bounce V2
+
+ -- Compatible with latest version of Bootstrap (v2.1.1)
+
+ -- Supports both fixed-width and responsive layouts
+
+ -- Responsive video support with FitVids.js (http://fitvidsjs.com/)
+
+ -- Updated jquery (v1.8.2)
+
+ -- Switched to Google Web Fonts
+
+ -- New alternative homepage
+
+ -- New login / register pages and updated modals
+
+ -- Cleaner HTML and CSS
+      -- Seperated color stylesheet (in preperation for Bounce v2.1 coming soon)
+
+
+Bounce V1 - Initial Release
+
+ -- Compatible with Bootstrap 2.0.x
+
+
+=========================
+=========================
+Questions, suggestions, or problems?
+
+Contact me via my Wrap Bootstrap seller profile.
+https://wrapbootstrap.com/user/EvanC93 
