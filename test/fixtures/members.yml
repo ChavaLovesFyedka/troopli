@@ -1,3 +1,4 @@
 valid_member:
   email: "member@example.com"
   encrypted_password: <%= Devise.bcrypt(Member, 'password') %>
+  role: "member"
