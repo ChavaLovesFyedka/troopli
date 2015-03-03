@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  root to: "troops#index"
+
   devise_for :admins
   devise_for :leaders, controllers: { sessions: "leaders/sessions" }
+  
   get 'pages/about'
-  root to: "troops#index"
   get "pages/blog"
   get "pages/contact" #, :as => 'contact_page'
   get "pages/calendar"
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   get "pages/meeting"
   get "pages/newsletter"
   get "pages/scoutlist"
+ 
   # match '/gallery' => 'pages#gallery'
   # match '/about' => 'pages#about'
   # match '/contact' => 'pages#contact'
