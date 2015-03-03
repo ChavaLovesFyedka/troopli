@@ -39,4 +39,12 @@ class MemberTest < ActiveSupport::TestCase
   test "responds to requested_leadership?" do 
     assert_respond_to @member, :requested_leadership?
   end
+
+  test "scope :with_request returns members who have requested leadership" do 
+    members = Member.with_request
+
+    assert members.all? do |member|
+      member.leadership_request == true && member.role != 'leader'
+    end
+  end
 end

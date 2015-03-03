@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   devise_for :members
   resources :troops
 
+  namespace :admin do 
+    get 'panel', to: "main#panel"
+  end
+
   get 'pages/about'
   get "pages/blog"
   get "pages/contact" #, :as => 'contact_page'

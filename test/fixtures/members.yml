@@ -2,3 +2,13 @@ valid_member:
   email: "member@example.com"
   encrypted_password: <%= Devise.bcrypt(Member, 'password') %>
   role: "member"
+
+valid_leader:
+  email: "leader@example.com"
+  encrypted_password: <%= Devise.bcrypt(Member, 'password') %>
+  role: "leader"
+
+valid_admin:
+  email: "admin@example.com"
+  encrypted_password: <%= Devise.bcrypt(Member, 'password') %>
+  role: "super admin"
