@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: "troops#index"
 
-  devise_for :admins
-  devise_for :leaders, controllers: { sessions: "leaders/sessions" }
-  
+  devise_for :members
+  resources :troops
+
   get 'pages/about'
   get "pages/blog"
   get "pages/contact" #, :as => 'contact_page'
@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   # match '/gallery' => 'pages#gallery'
   # match '/about' => 'pages#about'
   # match '/contact' => 'pages#contact'
-
-  resources :troops
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
