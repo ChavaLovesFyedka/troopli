@@ -5,4 +5,8 @@ class Member < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def requested_leadership?
+    self.leadership_request
+  end
 end
