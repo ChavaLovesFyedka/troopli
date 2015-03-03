@@ -8,23 +8,12 @@ class MemberTest < ActiveSupport::TestCase
   test "can be created" do 
     member = Member.new(email: "hello@example.com",
                         password: "password",
-                        password_confirmation: "password",
-                        role: "member")
-
+                        password_confirmation: "password")
     assert member.save
   end
 
   test "responds to role" do 
     assert_respond_to @member, :role 
-  end
-
-  test "must have a role" do 
-    member = Member.new(email: "roleless@example.com",
-                        password: "password",
-                        password_confirmation: "password",
-                        role: "")
-
-    assert_not member.save
   end
 
   test "role cannot be 'dog'" do 
@@ -33,5 +22,21 @@ class MemberTest < ActiveSupport::TestCase
                         password_confirmation: "password",
                         role: "dog")
     assert_not member.save
+  end
+
+  test "default role is 'member'" do 
+    member = Member.create(email: "member@example.com",
+                        password: "password",
+                        password_confirmation: "password")
+
+    assert member.role == "member"
+  end
+
+  test "responds to leadership_request" do 
+    assert_respond_to @member, :leadership_request
+  end
+
+  test "responds to requested_leadership?" do 
+    assert_respond_to @member, :requested_leadership?
   end
 end
