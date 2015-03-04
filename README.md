@@ -2,14 +2,14 @@
 
 ### Invitation
 
-**app/mailers/invitation.rb**
+**app/mailers/invitation.rb**  
 change `default from: "example@email.com"` to the email address you want
 invitations to be sent from.
 
-**app/views/invitation/leader_invitation.[html/text].erb**
+**app/views/invitation/leader_invitation.[html/text].erb**  
 modify with invitation content.
 
-**sample.env**
+**sample.env**  
 create .env file and copy the contents of sample.env, then supply the variables
 with your information.
 
