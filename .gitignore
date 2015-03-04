@@ -17,3 +17,6 @@
 
 # Ignore template
 /vendor/template/*
+
+# Ignore .env file
+.env
