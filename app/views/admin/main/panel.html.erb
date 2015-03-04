@@ -17,7 +17,7 @@
         <% @requests.each do |member| %>
           <%= member.email %> has requested troop leadership.
           <br /> 
-          <%= link_to "Approve #{member.email} as leader", approve_member_path(member), method: :put  %> 
+          <%= link_to "Send invitation to #{member.email}", approve_member_path(member), method: :put  %> 
           <br />          
           <%= link_to "Reject #{member.email} as leader", reject_member_path(member), method: :put %>
         <% end %>
