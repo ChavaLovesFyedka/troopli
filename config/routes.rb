@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "troops#index"
 
   devise_for :members
-  resources :members, only: [:show] do 
+  resources :members, only: [:show, :destroy] do 
     member do 
       put :approve, :reject
     end

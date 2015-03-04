@@ -9,6 +9,15 @@ class MembersController < ApplicationController
     update_leadership(params[:id], 'member')
   end
 
+  def destroy
+    member = Member.find(params[:id])
+    member_email = member.email
+    member.destroy
+
+    flash[:notice] = "#{member_email} has been removed from the system."
+    redirect_to admin_panel_path
+  end
+
   private
 
   def update_leadership(id, role)
