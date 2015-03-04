@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   root to: "troops#index"
 
   devise_for :members
+  resources :members, only: [:show] do 
+    member do 
+      put :approve, :reject
+    end
+  end
+
   resources :troops
 
   namespace :admin do 

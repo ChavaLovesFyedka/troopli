@@ -12,3 +12,9 @@ valid_admin:
   email: "admin@example.com"
   encrypted_password: <%= Devise.bcrypt(Member, 'password') %>
   role: "super admin"
+
+requesting_member:
+  email: "requesting@example.com"
+  encrypted_password: <%= Devise.bcrypt(Member, 'password') %>
+  role: "member"
+  leadership_request: true

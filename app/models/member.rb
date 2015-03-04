@@ -12,4 +12,8 @@ class Member < ActiveRecord::Base
   def requested_leadership?
     self.leadership_request
   end
+
+  def is_admin?
+    self.role == 'super admin'
+  end
 end

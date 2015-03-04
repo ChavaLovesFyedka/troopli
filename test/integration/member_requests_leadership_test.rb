@@ -20,5 +20,11 @@ class MemberRequestsLeadershipTest < ActionDispatch::IntegrationTest
     visit admin_panel_path
 
     assert page.has_content?('test@email.com has requested troop leadership.')
+
+    click_link 'Approve test@email.com as leader'
+
+    assert page.has_content?('test@email.com is now a leader.')
+    assert current_path == admin_panel_path
+    assert_not page.has_content?('test@email.com has requested troop leadership.')
   end
 end
