@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
+  post '/leader-invitation', to: 'members#send_leader_invitation'  
   resources :troops
 
   namespace :admin do 

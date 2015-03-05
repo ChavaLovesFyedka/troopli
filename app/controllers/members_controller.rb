@@ -1,8 +1,20 @@
 class MembersController < ApplicationController
   before_filter :authenticate_admin!
 
+  def send_leader_invitation
+    @emails = params[:emails].split(",")
+
+    @emails.each do |email|
+      Invitation.leader_invitation(email).deliver
+    end
+
+    flash[:notice] = "Sent #{"invitation".pluralize(@emails.count)} to #{@emails.to_sentence}."
+    redirect_to admin_panel_path   
+  end
+
   def approve
     update_leadership(params[:id], 'leader')
+    Invitation.leader_invitation(Member.find(params[:id]).email).deliver
   end
 
   def reject

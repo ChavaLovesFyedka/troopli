@@ -23,6 +23,24 @@
         <% end %>
      
       </div>
+
+      <div class="span6">
+        <h2>Send Invitations</h2>
+
+        <div class="well well-form txt-lefty">
+          <%= form_tag "/leader-invitation" do %>
+            <div class="control-group">
+              <div class="controls">
+                <%= label_tag(:emails, "To (comma separated list of emails): ") %>
+                <%= text_field_tag(:emails)  %>
+                <br />
+                <%= submit_tag "Send", class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
