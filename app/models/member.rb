@@ -9,11 +9,11 @@ class Member < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  def requested_leadership?
-    self.leadership_request
-  end
-
   def is_admin?
     self.role == 'super admin'
+  end
+
+  def is_member?
+    self.role == 'member'
   end
 end
