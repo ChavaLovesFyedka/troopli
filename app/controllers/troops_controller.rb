@@ -1,6 +1,6 @@
 class TroopsController < ApplicationController
   before_filter :authenticate_leader!, except: [:index, :show]
-  before_filter :authenticate_member!, only: [:index, :show]
+  before_filter :authenticate_member!, only: [:show]
   before_action :set_troop, only: [:show, :edit, :update, :destroy]
 
   def index
