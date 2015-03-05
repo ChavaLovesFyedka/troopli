@@ -28,5 +28,4 @@ class PagesController < ApplicationController
 
   def scoutlist
   end
-
 end

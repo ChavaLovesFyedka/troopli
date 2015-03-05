@@ -36,10 +36,6 @@ class MemberTest < ActiveSupport::TestCase
     assert_respond_to @member, :leadership_request
   end
 
-  test "responds to requested_leadership?" do 
-    assert_respond_to @member, :requested_leadership?
-  end
-
   test "scope :with_request returns members who have requested leadership" do 
     members = Member.with_request
 

@@ -13,18 +13,20 @@ class MemberRequestsLeadershipTest < ActionDispatch::IntegrationTest
 
     assert current_path == root_path
     assert page.has_content?('Welcome! You have signed up successfully.')
+  end
 
-    click_link 'Logout'
+  test "an admin approves member's request" do
+    request = "requesting@example.com has requested troop leadership."
 
     sign_in(members(:valid_admin))
     visit admin_panel_path
 
-    assert page.has_content?('test@email.com has requested troop leadership.')
+    assert page.has_content?(request)
 
-    click_link 'Send invitation to test@email.com'
+    click_link 'Send invitation to requesting@example.com'
 
-    assert page.has_content?('test@email.com is now a leader.')
+    assert page.has_content?('requesting@example.com is now a leader.')
     assert current_path == admin_panel_path
-    assert_not page.has_content?('test@email.com has requested troop leadership.')
+    assert_not page.has_content?(request)
   end
 end

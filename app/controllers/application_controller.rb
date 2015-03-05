@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_leader!
     # super admin && leaders have access
-    if !member_signed_in? || member.is_member?
+    if !member_signed_in? || current_member.is_member?
       reject_access 
     end
   end
@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   end
 
   def reject_access
-    flash[:alert] = "You do not have access to that page."
+    flash[:alert] = "You do not have access to that action."
     redirect_to root_path
   end
 end
