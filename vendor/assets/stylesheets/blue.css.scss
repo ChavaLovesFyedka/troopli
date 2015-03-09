@@ -48,7 +48,7 @@
     color: #17405E;
 }
 #landingSlide {
-    background: url("../img/landing.png") no-repeat scroll center 200px #F1F1F1;
+    background: image-url("landing.png") no-repeat scroll center 200px #F1F1F1;
 }
 
 /* Page Header
@@ -63,7 +63,7 @@
 /* Main Content
 -------------------------------------------------- */
 #content {
-    background: url("../img/noise.png") repeat scroll 0 0 #FFFFFF;
+    background: image-url("noise.png") repeat scroll 0 0 #FFFFFF;
     color: #394755;
 }
 .bouncy:hover i {
