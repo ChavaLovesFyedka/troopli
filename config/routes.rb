@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: "troops#index"
+  
+  get 'calendar/show'
 
   devise_for :members
   resources :members, only: [:show, :destroy] do 
