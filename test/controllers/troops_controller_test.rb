@@ -58,8 +58,7 @@ class TroopsControllerTest < ActionController::TestCase
 
     patch :update, id: @troop, troop: { age_level: @troop.age_level,
                                         description: @troop.description,
-                                        name: @troop.name,
-                                        picture: @troop.picture }
+                                        name: @troop.name }
 
     assert_redirected_to troop_path(assigns(:troop))
   end

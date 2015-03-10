@@ -3,5 +3,4 @@
 valid_troop:
   name: MyString
   description: MyText
-  picture: MyString
   age_level: 1

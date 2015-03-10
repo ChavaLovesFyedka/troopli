@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310001554) do
+ActiveRecord::Schema.define(version: 20150310211253) do
 
   create_table "badges", force: true do |t|
     t.string   "name"
@@ -70,11 +70,14 @@ ActiveRecord::Schema.define(version: 20150310001554) do
   create_table "troops", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "picture"
     t.integer  "age_level"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "leader_id"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
 end

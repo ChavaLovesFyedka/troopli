@@ -1,136 +1,14 @@
-<div id="header">
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        <h1>Blog</h1>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div id="content">
   <div class="container txt-lefty">
     <div class="row-fluid">
-      <div class="span9">
-        <div class="entry">
-          <h2>Welcome to Troopli!</h2>
-          <small>
-            <em>Hi, <%= current_member.email %>! This is your troop's page!</em>
-          </small>
-          <hr>
-          <div class="row-fluid">
-            <div class="span5">
-              <a href="#">
-                <%= image_tag(@troop.picture) %>
-              </a>
-            </div>
-            <div class="span7">
-              <p>Welcome to Troopli! I am a hard-coded text box where a welcome message can be displayed.</p>
-
-              <p>
-                I could be a link to <a href="#">meet our scouts</a>!
-              </p>
-              <p>
-                <strong>Name:</strong>
-                <%= @troop.name %>
-              </p>
-
-              <p>
-                <strong>Description:</strong>
-                <%= @troop.description %>
-              </p>
-
-              <p>
-                <strong>Age level:</strong>
-                <%= @troop.age_level %>
-              </p>
-
-              <p>
-                <%= link_to 'Edit', edit_troop_path(@troop) %> |
-                <%= link_to 'Back', troops_path %>
-              <p>
-            </div>
-          </div>
-        </div>
-
-        <div class="entry">
-          <a href="#"><h2>News Feed</h2></a>
-          <small><em>Dynamic news feed is not dynamic yet.</a></em></small>
-          <hr>
-          <div class="row-fluid">
-            <div class="span5">
-              <a href="#">
-                <%= image_tag "img-polaroid" %>
-              </a>
-            </div>
-            <div class="span7">
-              <p>This is a placeholder for a newsfeed.
-              It should be styled slightly differently than the
-              welcome box. But it's here as a reminder to-do
-              and example of what the newsfeed will consist of.</p>
-              <button class="btn btn-primary">Read More</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="pagination pagination-right">
-          <ul>
-            <li><a href="#">&#171;</a></li>
-            <li><a href="#">1</a></li>
-            <li class="active"><a href="#"></a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">&#187;</a></li>
-          </ul>
-        </div>
+      <div class="span12">
+        <%= render "welcome" %>
       </div>
+    </div>
 
-      <div class="span3">
-        <div class="accordion" id="accordion2">
-          <div class="accordion-group">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Next Three Events</a>
-            </div>
-            <div id="collapseOne" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <div class="media">
-                  <a class="pull-left" href="#">
-                    <img class="media-object" alt="image" src="http://quickimage.it/64x64">
-                  </a>
-                  <div class="media-body">
-                    <h4 class="media-heading">An Event</h4>
-                    <ul class="unstyled">
-                      <li><small>Date</small></li>
-                      <li><small>Location</small></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-group">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Popular Posts</a>
-            </div>
-
-            <div id="collapseTwo" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <ul class="unstyled">
-                  <li><a href="#">Post Title</a></li>
-                  <li><a href="#">Another Post</a></li>
-                  <li><a href="#">Another Post</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- <h3>Text Widget</h3> -->
-
-        </div>
-      </div>
+    <div class="row-fluid">
+      <%= render "feed" %>
+      <%= render "sidebar" %>
     </div>
   </div>
 </div>
-
-
