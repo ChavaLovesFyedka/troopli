@@ -1,4 +1,6 @@
 class Member < ActiveRecord::Base
+  has_one :troop, foreign_key: 'leader_id'
+
   ROLES = ["super admin", "leader", "member"]
 
   validates :role, presence: true, inclusion: { in: ROLES }

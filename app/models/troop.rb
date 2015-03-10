@@ -1,3 +1,4 @@
 class Troop < ActiveRecord::Base
-	#has_many: badges
+  belongs_to :leader, class_name: 'Member'
+	# has_many: badges
 end

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TroopsControllerTest < ActionController::TestCase
   setup do
-    @troop = troops(:one)
+    @troop = troops(:valid_troop)
 
     # Fixtures already exist in the test database
     # at the point a test is run, meaning that you have
