@@ -28,4 +28,8 @@ class TroopTest < ActiveSupport::TestCase
   test "responds to leader" do 
     assert_respond_to @troop, :leader
   end
+
+  test "responds to events" do 
+    assert_respond_to @troop, :events
+  end
 end

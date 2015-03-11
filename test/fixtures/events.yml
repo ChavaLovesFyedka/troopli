@@ -1,0 +1,5 @@
+valid_event:
+  name: Event
+  description: A fun event!
+  start_at: 1.day.ago
+  end_at: 1.day.ago

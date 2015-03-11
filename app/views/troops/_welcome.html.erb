@@ -1,7 +1,9 @@
 <div class="entry welcome-entry">
   <h2 class="welcome-header">Welcome to Troopli!</h2>
   <div class="welcome-header">
-    <%= link_to "Edit Troop Info", edit_troop_path(@troop) %>
+    <i class="fa fa-calendar fa-3x"></i>
+    <br />
+    <small><em>Click the calendar icon to view your calendar.</em></small>
   </div> 
   <hr>
   <div class="row-fluid">
@@ -11,11 +13,14 @@
       </a>
     </div>
     <div class="span9">
-      <p>Welcome to Troopli! I am a hard-coded text box where a welcome message can be displayed.</p>
+      <p>
+        Welcome to Troopli! I am a hard-coded text box where a welcome message can be displayed.
+      </p>
 
       <p>
       I could be a link to <a href="#">meet our scouts</a>!
       </p>
+
       <p>
       <strong>Name:</strong>
       <%= @troop.name %>
@@ -30,11 +35,6 @@
       <strong>Age level:</strong>
       <%= @troop.age_level %>
       </p>
-
-      <p>
-      <%= link_to 'Edit', edit_troop_path(@troop) %> |
-      <%= link_to 'Back', troops_path %>
-      <p>
     </div>
   </div>
 </div>
