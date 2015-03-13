@@ -5,20 +5,20 @@ class Calendar < Struct.new(:view, :date, :callback)
   delegate :content_tag, to: :view
 
   def table
-    content_tag :table, class: "calendar table table-bordered table-striped" do
+    content_tag :table, class: "calendar" do
       header + week_rows
     end
   end
 
   def header
-    content_tag :tr do 
+    content_tag :tr, class: "week-header"  do 
       HEADER.map { |day| content_tag :th, day }.join.html_safe
     end
   end
 
   def week_rows
     weeks.map do |week|
-      content_tag :tr do 
+      content_tag :tr, class: "week"  do 
         week.map { |day| day_cell(day) }.join.html_safe
       end
     end.join.html_safe

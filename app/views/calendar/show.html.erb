@@ -1,22 +1,27 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <div class="well controls">
-        <%= link_to calendar_show_path(date: @date - 1.month), class: "btn btn-default" do %>
-          <i class="glyphicon glyphicon-backward"></i>
-        <% end %>
-        <%= "#{@date.strftime("%B")} #{@date.year}" %>
-        <%= link_to calendar_show_path(date: @date + 1.month), class: "btn btn-default" do %>
-          <i class="glyphicon glyphicon-forward"></i>
-        <% end %>
-      </div>
+<div id="toggle-stats", style="display: none;", class: "calendar-box">
+  <div class="row-fluid">
+    <div class="span12">
+      <%= link_to calendar_show_path(date: @date - 1.month) do %>
+        <i class="fa fa-toggle-left fa-2x"></i>
+      <% end %>
+      <%= "#{@date.strftime("%B")} #{@date.year}" %>
+      <%= link_to calendar_show_path(date: @date + 1.month) do %>
+        <i class="fa fa-toggle-right fa-2x"></i>
+      <% end %>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
+  <div class="row-fluid">
+    <div class="span12">
       <%= calendar @date do |date| %>
         <%= date.day %>
+        <% if @events_by_date.any? { |e| e.start_at.day == date.day } %>
+          <ul>
+            <% @events_by_date.each do |event| %>
+              <li><%= event.name %></li>
+            <% end %>
+          </ul>
+        <% end %>
       <% end %>
     </div>
   </div>

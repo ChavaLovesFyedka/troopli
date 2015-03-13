@@ -4,11 +4,6 @@ class TroopsControllerTest < ActionController::TestCase
   setup do
     @troop = troops(:valid_troop)
 
-    # Fixtures already exist in the test database
-    # at the point a test is run, meaning that you have
-    # to instantiate a new, unique troop in order to test
-    # create.
-
     @valid_params = { age_level: 1,
                       description: "A troop that exists.",
                       name: "A Name" }
