@@ -22,6 +22,7 @@ small.toggle-calendar {
 
 .calendar {
   position: relative;
+  width: 85%;
   color: #c4c8cc;
   z-index:5;
   /*
@@ -33,7 +34,6 @@ small.toggle-calendar {
     and can be fixed by calling 'border-collapse: separate'
     see explanation:
     http://stackoverflow.com/a/10666636/3703449
-
   */
 
   border-collapse: separate !important;
@@ -53,8 +53,8 @@ small.toggle-calendar {
 .calendar-background {
   position: absolute;
   top: 0px;
-  left: 42px;
-  width: 93%;
+  left: 7.5%;
+  width: 85%;
   height: 100%;
   z-index: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";

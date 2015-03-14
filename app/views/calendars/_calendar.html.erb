@@ -1,0 +1,29 @@
+<div class="row-fluid">
+  <div class="span12 calendar-header">
+    <%= link_to troop_calendar_path(@troop, date: @date - 1.month) do %>
+      <i class="fa fa-toggle-left fa-2x"></i>
+    <% end %>
+    <div class="calendar-month">
+      <%= "#{@date.strftime("%B")} #{@date.year}" %>
+    </div>
+    <%= link_to troop_calendar_path(@troop, date: @date + 1.month) do %>
+      <i class="fa fa-toggle-right fa-2x"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span12 calendar-box">
+    <%= calendar @date do |date| %>
+      <%= date.day %>
+      <% if @events_by_date.any? { |e| e.start_at.day == date.day } %>
+        <ul>
+          <% @events_by_date.each do |event| %>
+            <li><%= event.name %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+    <div class="calendar-background"></div> 
+  </div>
+</div>
