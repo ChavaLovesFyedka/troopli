@@ -32,4 +32,12 @@ class TroopTest < ActiveSupport::TestCase
   test "responds to events" do 
     assert_respond_to @troop, :events
   end
+
+  test "responds to troop_badges" do 
+    assert_respond_to @troop, :troop_badges
+  end
+
+  test "respond to badges" do 
+    assert_respond_to @troop, :badges
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314221353) do
+ActiveRecord::Schema.define(version: 20150314222752) do
 
   create_table "badges", force: true do |t|
     t.string   "name"
@@ -74,6 +74,13 @@ ActiveRecord::Schema.define(version: 20150314221353) do
   add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
 
   create_table "parsers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "troop_badges", force: true do |t|
+    t.integer  "troop_id"
+    t.integer  "badge_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
