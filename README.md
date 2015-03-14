@@ -26,3 +26,11 @@ rails console` and type:
     $ Invitation.leader_invitation("youremailaddress").deliver
 
 Check your email. The invitation should have been sent to your email address.
+
+### Creating Badges
+
+    $ bundle exec rails c
+    $ parser = Parser.new("Patches1.csv")
+    $ parser.badge_list
+    $ Badge.count
+    $ => 260
