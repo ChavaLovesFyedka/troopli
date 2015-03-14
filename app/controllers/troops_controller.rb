@@ -8,8 +8,9 @@ class TroopsController < ApplicationController
   end
 
   def show
-    @troop = Troop.includes(:events).find(params[:id])
+    @troop = Troop.includes(:events, :badges).find(params[:id])
     @events = @troop.events.next_3
+    @badges = @troop.badges
   end
 
   def new
