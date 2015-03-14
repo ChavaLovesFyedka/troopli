@@ -1,3 +1,7 @@
+small.toggle-calendar {
+  clear: both
+}
+
 .calendar-header {
   margin: 0 auto;
   text-align: center;
@@ -18,7 +22,7 @@
 
 .calendar {
   position: relative;
-  color: white;
+  color: #c4c8cc;
   z-index:5;
   /*
     
@@ -49,19 +53,22 @@
 .calendar-background {
   position: absolute;
   top: 0px;
-  left: 0px;
-  width: 100%;
+  left: 42px;
+  width: 93%;
   height: 100%;
   z-index: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
   filter: alpha(opacity=40);
   opacity: 0.4;
-  background-color: white;
+  background-color: #c4c8cc;
   background-image: image-url("cute-tree.png"),
                     image-url("cute-leaf.png");
   background-size: 40%, 20%;
   background-repeat: no-repeat;
   background-position: 90% 100%, 7% 10%;
+
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
 
 tr.week-header {
@@ -84,4 +91,8 @@ tr.week td {
   vertical-align: top;
   padding: 7px;
   color: black;
+}
+
+tr.week td ul {
+  list-style-type: none;
 }
