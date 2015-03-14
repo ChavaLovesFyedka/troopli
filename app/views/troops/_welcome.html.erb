@@ -1,5 +1,10 @@
 <div class="entry welcome-entry">
   <h2 class="welcome-header">Welcome to Troopli!</h2>
+  <div class="welcome-header">
+    <%= link_to troop_calendar_path(@troop) do %>
+      <i class="fa fa-calendar fa-2x"></i>
+    <% end %>
+  </div>
   <hr>
   <div class="row-fluid">
     <div class="span3">
@@ -13,7 +18,7 @@
       </p>
 
       <p>
-      I could be a link to <a href="#">meet our scouts</a>!
+        <%= link_to "Meet our scouts!", pages_scoutlist_path %> 
       </p>
 
       <p>

@@ -1,0 +1,19 @@
+<% events.each do |event| %>
+
+  <div id="collapseOne" class="accordion-body collapse">
+    <div class="accordion-inner">
+      <div class="media">
+        <a class="pull-left" href="#">
+          <img class="media-object" alt="image" src="http://quickimage.it/64x64">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading"><%= event.name %></h4>
+          <ul class="unstyled">
+            <li><small><%= event.start_at.strftime("%B %-d, %Y") %></small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

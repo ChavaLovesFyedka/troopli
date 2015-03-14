@@ -1,1 +1,19 @@
-<<%= render "calendar" %>
+<div id="header">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1>Calendar for <%= link_to @troop.name, @troop %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <%= render "calendar" %>
+      </div>
+    </div>
+  </div>
+</div>
