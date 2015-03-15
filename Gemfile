@@ -11,12 +11,13 @@ gem 'font-awesome-rails'
 gem 'jquery-rails'
 # gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0',         group: :doc
 
 gem 'devise'
 gem 'bloggy'
 gem 'paperclip', '~> 4.2'
 
-gem 'spring',        group: :development
-gem 'dotenv-rails', group: [:development, :test]
-gem 'capybara-rails', group: [:test, :development]
+gem 'spring',                   group: :development
+gem 'dotenv-rails',             group: [:development, :test]
+gem 'capybara-rails',           group: [:test, :development]
+gem 'simplecov',                require: false, group: :test
