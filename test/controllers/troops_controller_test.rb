@@ -10,8 +10,6 @@ class TroopsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    sign_in members(:valid_member)
-
     get :index
     assert_response :success
     assert_not_nil assigns(:troops)
@@ -24,6 +22,13 @@ class TroopsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "must be leader to get new" do 
+    sign_in members(:valid_member)
+
+    get :new
+    assert_response :redirect
+  end
+
   test "should create troop" do
     sign_in members(:valid_leader)
     
@@ -34,11 +39,27 @@ class TroopsControllerTest < ActionController::TestCase
     assert_redirected_to troop_path(assigns(:troop))
   end
 
+  test "invalid create renders new with alert" do 
+    sign_in members(:valid_leader)
+
+    assert_no_difference('Troop.count') do 
+      post :create, troop: { name: '' }
+    end
+
+    assert_template :new
+    assert flash[:alert] == "Could not save troop."
+  end
+
   test "should show troop" do
     sign_in members(:valid_member)
 
     get :show, id: @troop
     assert_response :success
+  end
+
+  test "must be member to show troop" do 
+    get :show, id: @troop
+    assert_response :redirect
   end
 
   test "should get edit" do
@@ -56,6 +77,15 @@ class TroopsControllerTest < ActionController::TestCase
                                         name: @troop.name }
 
     assert_redirected_to troop_path(assigns(:troop))
+  end
+
+  test "invalid update renders edit with alert" do 
+    sign_in members(:valid_leader)
+
+    patch :update, id: @troop, troop: { name: '' }
+
+    assert_template 'edit'
+    assert flash[:alert] == "Could not save troop."
   end
 
   test "should destroy troop" do
