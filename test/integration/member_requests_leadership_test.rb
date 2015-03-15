@@ -28,5 +28,22 @@ class MemberRequestsLeadershipTest < ActionDispatch::IntegrationTest
     assert page.has_content?('requesting@example.com is now a leader.')
     assert current_path == admin_panel_path
     assert_not page.has_content?(request)
+
+    click_link 'Logout'
+  end
+
+  test "post :send_leader_invitation sends email(s)" do 
+    sign_in(members(:valid_admin))
+
+    visit admin_panel_path
+    
+    fill_in 'emails', with: 'friend@example.com'
+    
+    assert_difference 'ActionMailer::Base.deliveries.count' do 
+      click_button 'Send'
+    end
+
+    assert page.has_content?("Sent invitation to friend@example.com.")
+    assert current_path == admin_panel_path
   end
 end
