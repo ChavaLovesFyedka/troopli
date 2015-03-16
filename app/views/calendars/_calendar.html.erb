@@ -16,6 +16,15 @@
   <div class="span12 calendar-box">
     <%= calendar @date do |date| %>
       <%= date.day %>
+      <% if @events_by_date.any?{ |e| e.start_at.day == date.day &&
+                                      e.start_at.month == date.month &&
+                                      e.start_at.year == date.year } %>
+        <ul>
+          <% @events_by_date.each do |event| %> 
+            <li><%= link_to event.name, "#" %></li>
+          <% end %>
+        </ul>
+      <% end %>
     <% end %>
     <div class="calendar-background"></div> 
   </div>
