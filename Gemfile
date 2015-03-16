@@ -21,3 +21,5 @@ gem 'spring',                   group: :development
 gem 'dotenv-rails',             group: [:development, :test]
 gem 'capybara-rails',           group: [:test, :development]
 gem 'simplecov',                require: false, group: :test
+
+gem 'faker'

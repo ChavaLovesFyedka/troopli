@@ -21,7 +21,11 @@
                                       e.start_at.year == date.year } %>
         <ul>
           <% @events_by_date.each do |event| %> 
-            <li><%= link_to event.name, "#" %></li>
+            <% if event.start_at.day == date.day &&
+                  event.start_at.month == date.month &&
+                  event.start_at.year == date.year %>
+              <li><%= link_to event.name, "#" %></li>
+            <% end %>
           <% end %>
         </ul>
       <% end %>
