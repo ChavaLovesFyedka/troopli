@@ -15,6 +15,10 @@ class Member < ActiveRecord::Base
     self.role == 'super admin'
   end
 
+  def is_leader?
+    self.role == 'leader'
+  end
+
   def is_member?
     self.role == 'member'
   end

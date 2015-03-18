@@ -22,6 +22,12 @@
       </p>
 
       <p>
+        <% if current_member.is_leader? %>
+          <%= link_to "Add New Event", new_troop_event_path(troop_id: @troop.id) %>
+        <% end %>
+      </p>
+
+      <p>
       <strong>Name:</strong>
       <%= @troop.name %>
       </p>

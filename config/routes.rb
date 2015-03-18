@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/leader-invitation', to: 'members#send_leader_invitation'  
   resources :troops do 
     resource :calendar, only: [:show]
-    resources :events, only: [:show]
+    resources :events
   end
 
   namespace :admin do 
