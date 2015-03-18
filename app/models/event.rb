@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :troop
 
-  validates :name, presence: true
+  validates :name, :troop_id, presence: true
 
   scope :next_3, -> { where("start_at > ?", Time.now)
                       .order(start_at: :asc)
