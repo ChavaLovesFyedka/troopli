@@ -16,15 +16,14 @@
   <div class="span12 calendar-box">
     <%= calendar @date do |date| %>
       <%= date.day %>
-      <% if @events_by_date.any?{ |e| e.start_at.day == date.day &&
-                                      e.start_at.month == date.month &&
-                                      e.start_at.year == date.year } %>
+      <% if @events_by_date.any?{ |e| e.is_on?(date) } %>
         <ul>
           <% @events_by_date.each do |event| %> 
-            <% if event.start_at.day == date.day &&
-                  event.start_at.month == date.month &&
-                  event.start_at.year == date.year %>
-              <li><%= link_to event.name, "#" %></li>
+            <% if event.is_on?(date) %>
+              <li>
+                <%= link_to event.name, troop_event_path(troop_id: @troop.id,
+                                                         id: event.id) %>
+              </li>
             <% end %>
           <% end %>
         </ul>

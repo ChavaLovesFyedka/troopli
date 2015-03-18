@@ -95,4 +95,13 @@ tr.week td {
 
 tr.week td ul {
   list-style-type: none;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.today {
+  -webkit-box-shadow: inset 0px 0px 50px 10px rgba(195,200,205,1);
+  -mox-box-shadow: inset 0px 0px 50px 10px rgba(195,200,205,1);
+  box-shadow: inset 0px 0px 50px 10px rgba(195,200,205,1);
 }
