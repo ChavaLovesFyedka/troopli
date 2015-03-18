@@ -4,9 +4,11 @@
       <div class="accordion-heading">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Next Three Events</a>
       </div>
-      <%= render "events", events: @events %>
+      <div id="collapseOne" class="accordion-body collapse">
+        <%= render "event", events:  @events %>
+      </div>
     </div>
-
+    
     <div class="accordion-group">
       <div class="accordion-heading">
         <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Badges</a>

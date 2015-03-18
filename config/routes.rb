@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'events/show'
+
   root to: "troops#index"
   
   devise_for :members
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   post '/leader-invitation', to: 'members#send_leader_invitation'  
   resources :troops do 
     resource :calendar, only: [:show]
+    resources :events, only: [:show]
   end
 
   namespace :admin do 
