@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_filter :authenticate_leader!, except: [:show]
+  before_filter :authenticate_member!, only: [:show]
 
   def show
     @event = Event.find(params[:id])
