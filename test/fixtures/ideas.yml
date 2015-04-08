@@ -4,8 +4,3 @@ one:
   name: MyString
   category: MyString
   age_level: MyString
-
-two:
-  name: MyString
-  category: MyString
-  age_level: MyString

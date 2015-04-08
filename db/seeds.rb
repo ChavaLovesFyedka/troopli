@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-OfficialBadgeParser.new
+# OfficialBadgeParser.new
 
-badgeparser1 = Parser.new('./Patches1.csv')
-badgeparser1.badge_list
+# badgeparser1 = Parser.new('./Patches1.csv')
+# badgeparser1.badge_list
 
 #Badges 

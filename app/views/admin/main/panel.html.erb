@@ -1,0 +1,54 @@
+<div id="header">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1>Admin Panel</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span6">
+        <h2>Leader Requests</h2>
+
+        <% @requests.each do |member| %>
+          <%= member.email %> has requested troop leadership.
+          <br /> 
+          <%= link_to "Send invitation to #{member.email}", approve_member_path(member), method: :put  %> 
+          <br />          
+          <%= link_to "Reject #{member.email} as leader", reject_member_path(member), method: :put %>
+        <% end %>
+     
+      </div>
+
+      <div class="span6">
+        <h2>Send Invitations</h2>
+        <!-- This link will not work in production. It is a placeholder
+        for a feature idea. -->
+
+        <small>
+          <%= link_to "Preview invitation email", "/rails/mailers" %>
+        </small>
+        <br />
+        <br />
+        
+        <div class="well well-form txt-lefty">
+          <%= form_tag "/leader-invitation" do %>
+            <div class="control-group">
+              <div class="controls">
+                <%= label_tag(:emails, "To (comma separated list of emails): ") %>
+                <%= text_field_tag(:emails)  %>
+                <br />
+                <%= submit_tag "Send", class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

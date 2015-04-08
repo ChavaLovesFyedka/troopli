@@ -5,9 +5,3 @@ one:
   description: MyText
   picture: MyString
   age_level: 1
-
-two:
-  name: MyString
-  description: MyText
-  picture: MyString
-  age_level: 1

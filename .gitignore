@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore template
+/vendor/template/*
+
+# Ignore .env file
+.env

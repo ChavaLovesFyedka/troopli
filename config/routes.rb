@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :leaders, controllers: { sessions: "leaders/sessions" }
-  get 'pages/about'
   root to: "troops#index"
+
+  devise_for :members
+  resources :members, only: [:show, :destroy] do 
+    member do 
+      put :approve, :reject
+    end
+  end
+
+  post '/leader-invitation', to: 'members#send_leader_invitation'  
+  resources :troops
+
+  namespace :admin do 
+    get 'panel', to: "main#panel"
+  end
+
+  get 'pages/about'
   get "pages/blog"
   get "pages/contact" #, :as => 'contact_page'
   get "pages/calendar"
@@ -13,11 +26,10 @@ Rails.application.routes.draw do
   get "pages/meeting"
   get "pages/newsletter"
   get "pages/scoutlist"
+ 
   # match '/gallery' => 'pages#gallery'
   # match '/about' => 'pages#about'
   # match '/contact' => 'pages#contact'
-
-  resources :troops
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

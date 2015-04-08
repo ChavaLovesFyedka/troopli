@@ -6,10 +6,3 @@ one:
   age_level: MyString
   image: MyString
   description: MyText
-
-two:
-  name: MyString
-  category: MyString
-  age_level: MyString
-  image: MyString
-  description: MyText
