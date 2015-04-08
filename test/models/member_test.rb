@@ -3,6 +3,7 @@ require 'test_helper'
 class MemberTest < ActiveSupport::TestCase
   def setup
     @member = members(:valid_member)
+    @leader = members(:valid_leader)
   end
   
   test "can be created" do 
@@ -34,6 +35,10 @@ class MemberTest < ActiveSupport::TestCase
 
   test "responds to leadership_request" do 
     assert_respond_to @member, :leadership_request
+  end
+
+  test "responds to troop if leader, not if member" do 
+    assert_respond_to @leader, :troop
   end
 
   test "scope :with_request returns members who have requested leadership" do 

@@ -20,3 +20,9 @@
 
 # Ignore .env file
 .env
+
+# Ignore .DS_Store files
+.DS_Store
+
+# Ignore SimpleCov generated files
+coverage

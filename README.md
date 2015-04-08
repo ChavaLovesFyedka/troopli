@@ -1,5 +1,24 @@
 # troopli
 
+### Database Setup  
+
+can call `rake db:reset` or, if you're starting with an empty database, `rake db:seed`  
+
+This will create:
+
+**All Badges**  
+
+**1 Admin**  
+  * email: admin@example.com
+  * password: password
+
+**2 Leaders**  
+  *each with a troop that has*
+   * 3 badges
+   * 10 events within the next 30 days
+
+**10 Members**  
+
 ### Invitation
 
 **app/mailers/invitation.rb**  
@@ -26,3 +45,11 @@ rails console` and type:
     $ Invitation.leader_invitation("youremailaddress").deliver
 
 Check your email. The invitation should have been sent to your email address.
+
+### Creating Badges
+
+    $ bundle exec rails c
+    $ parser = Parser.new("Patches1.csv")
+    $ parser.badge_list
+    $ Badge.count
+    $ => 260

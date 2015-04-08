@@ -1,4 +1,4 @@
-<%= form_for(@troop) do |f| %>
+<%= form_for @troop, html: { multipart: true } do |f| %>
   <% if @troop.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@troop.errors.count, "error") %> prohibited this troop from being saved:</h2>
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :picture %><br>
-    <%= f.text_field :picture %>
+    <%= f.file_field :picture %>
   </div>
   <div class="field">
     <%= f.label :age_level %><br>

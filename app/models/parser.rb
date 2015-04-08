@@ -9,10 +9,8 @@ class Parser
 
 
   def badge_list
-    CSV.foreach(@file_path) do |row|
-      new_row = row.join(",")     
-      name, logo, troop_type  = new_row.split(",")
-      badge = Badge.create(:name => name.strip, :category => category.strip, :skill => skill.strip, :age_level => age_level.strip, :image => image.strip)
+    CSV.foreach(@file_path, headers: true) do |row|
+      Badge.create!(row.to_hash)
     end
   end
 

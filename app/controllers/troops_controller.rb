@@ -1,13 +1,16 @@
 class TroopsController < ApplicationController
   before_filter :authenticate_leader!, except: [:index, :show]
   before_filter :authenticate_member!, only: [:show]
-  before_action :set_troop, only: [:show, :edit, :update, :destroy]
+  before_action :set_troop, only: [:edit, :update, :destroy]
 
   def index
     @troops = Troop.all
   end
 
   def show
+    @troop = Troop.includes(:events, :badges).find(params[:id])
+    @events = @troop.events.next_3
+    @badges = @troop.badges
   end
 
   def new

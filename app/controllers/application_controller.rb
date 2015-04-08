@@ -26,12 +26,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authenticate_member!
+#  def authenticate_member!
     # super admin && leaders && members have access 
-    unless member_signed_in?
-      reject_access 
-    end
-  end
+#    unless member_signed_in?
+#      reject_access 
+#    end
+#  end
 
   def reject_access
     flash[:alert] = "You do not have access to that action."

@@ -1,0 +1,107 @@
+small.toggle-calendar {
+  clear: both
+}
+
+.calendar-header {
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+  display: inline;
+}
+
+.calendar-month {
+  font-size: 3em;
+  display: inline;
+  padding-left: 18px;
+  padding-right: 10px;
+}
+
+.calendar-box {
+  position: relative;
+}
+
+.calendar {
+  position: relative;
+  width: 85%;
+  color: #c4c8cc;
+  z-index:5;
+  /*
+    
+    bootstrap calls
+    'border-collapse: collapse;'
+    on all tables (line 1976 in bootstrap.css.scss)
+    this interferes with border-radius on tables
+    and can be fixed by calling 'border-collapse: separate'
+    see explanation:
+    http://stackoverflow.com/a/10666636/3703449
+  */
+
+  border-collapse: separate !important;
+   
+  border: 3px solid; 
+  -webkit-border-top-left-radius: 30px;
+  -webkit-border-top-right-radius: 30px;
+  -moz-border-radius-topleft: 30px;
+  -moz-border-radius-topright: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+
+  margin: 0 auto;
+
+}
+
+.calendar-background {
+  position: absolute;
+  top: 0px;
+  left: 7.5%;
+  width: 85%;
+  height: 100%;
+  z-index: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
+  opacity: 0.4;
+  background-color: #c4c8cc;
+  background-image: image-url("cute-tree.png"),
+                    image-url("cute-leaf.png");
+  background-size: 40%, 20%;
+  background-repeat: no-repeat;
+  background-position: 90% 100%, 7% 10%;
+
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+}
+
+tr.week-header {
+  color: #394755;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+tr.week-header th {
+  width: 150px;
+  text-align: center;
+  height: 75px;
+}
+
+tr.week td {
+  height: 100px;
+  width: 100px;
+  border: 1px dotted #d0d0d0;
+  text-align: left;
+  vertical-align: top;
+  padding: 7px;
+  color: black;
+}
+
+tr.week td ul {
+  list-style-type: none;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.today {
+  -webkit-box-shadow: inset 0px 0px 50px 10px rgba(195,200,205,1);
+  -mox-box-shadow: inset 0px 0px 50px 10px rgba(195,200,205,1);
+  box-shadow: inset 0px 0px 50px 10px rgba(195,200,205,1);
+}

@@ -1,0 +1,25 @@
+<div id="header">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1>Event for <%= link_to @event.troop.name, troop_path(@event.troop) %></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="content">
+  <div class="container txt-lefty">
+    <div class="row-fluid">
+      <div class="span12">
+        <h1><%= @event.name %></h1>
+        <p><%= display_date @event.start_at %></p>
+        <p>
+        <%= link_to "Change Event", edit_troop_event_path(troop_id: @event.troop.id) %> 
+        | 
+        <%= link_to "Destroy Event", troop_event_path, method: :delete, data: { confirm: "Are you sure?" } %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

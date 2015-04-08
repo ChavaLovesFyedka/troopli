@@ -1,0 +1,46 @@
+<div class="entry welcome-entry">
+  <h2 class="welcome-header">Welcome to Troopli!</h2>
+  <div class="welcome-header">
+    <%= link_to troop_calendar_path(@troop) do %>
+      <i class="fa fa-calendar fa-2x"></i>
+    <% end %>
+  </div>
+  <hr>
+  <div class="row-fluid">
+    <div class="span3">
+      <a href="#">
+        <%= image_tag @troop.picture.url %>
+      </a>
+    </div>
+    <div class="span9">
+      <p>
+        Welcome to Troopli! I am a hard-coded text box where a welcome message can be displayed.
+      </p>
+
+      <p>
+        <%= link_to "Meet our scouts!", pages_scoutlist_path %> 
+      </p>
+
+      <p>
+        <% if current_member.is_leader? %>
+          <%= link_to "Add New Event", new_troop_event_path(troop_id: @troop.id) %>
+        <% end %>
+      </p>
+
+      <p>
+      <strong>Name:</strong>
+      <%= @troop.name %>
+      </p>
+
+      <p>
+      <strong>Description:</strong>
+      <%= @troop.description %>
+      </p>
+
+      <p>
+      <strong>Age level:</strong>
+      <%= @troop.age_level %>
+      </p>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303205049) do
+ActiveRecord::Schema.define(version: 20150314222752) do
 
   create_table "badges", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150303205049) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "skill"
   end
 
   create_table "badges_ideas", force: true do |t|
@@ -32,6 +33,16 @@ ActiveRecord::Schema.define(version: 20150303205049) do
 
   add_index "badges_ideas", ["badge_id"], name: "index_badges_ideas_on_badge_id"
   add_index "badges_ideas", ["idea_id"], name: "index_badges_ideas_on_idea_id"
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "start_at"
+    t.datetime "end_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "troop_id"
+  end
 
   create_table "ideas", force: true do |t|
     t.string   "name"
@@ -67,13 +78,24 @@ ActiveRecord::Schema.define(version: 20150303205049) do
     t.datetime "updated_at"
   end
 
+  create_table "troop_badges", force: true do |t|
+    t.integer  "troop_id"
+    t.integer  "badge_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "troops", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "picture"
     t.integer  "age_level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "leader_id"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
 end

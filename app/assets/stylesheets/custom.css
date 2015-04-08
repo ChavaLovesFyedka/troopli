@@ -1,0 +1,39 @@
+/* HEADER */
+
+.pad {
+  padding-right: 7px;
+}
+
+/* TROOP PAGE */
+
+.welcome-header {
+  display: inline;
+}
+
+.welcome-header i {
+  float: right;
+  display: inline;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.welcome-entry {
+  -webkit-box-shadow: inset 0px 0px 42px -11px rgba(57,71,85,1);
+  -moz-box-shadow: inset 0px 0px 42px -11px rgba(57,71,85,1);
+  box-shadow: inset 0px 0px 42px -11px rgba(47,71,85,1);
+}
+
+.sidebar {
+  padding-right: 30px;
+  margin-right: 30px;
+}
+
+/* CALENDAR */
+
+#toggle-stats {
+  display: none;
+}
+
+.fa-calendar {
+  cursor: pointer;
+}

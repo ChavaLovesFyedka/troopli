@@ -8,9 +8,6 @@ class PagesController < ApplicationController
   def budget
   end
 
-  def calendar
-  end
-
   def contact
   end
 
