@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20150303205049) do
     t.string   "name"
     t.string   "category"
     t.string   "age_level"
-    t.integer  "badge_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
