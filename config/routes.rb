@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'idea/index'
+
+  get 'idea/show'
+
+  get 'idea/new'
+
+  get 'idea/create'
+
+  get 'idea/edit'
+
+  get 'idea/update'
+
   get 'events/show'
 
   root to: "troops#index"
