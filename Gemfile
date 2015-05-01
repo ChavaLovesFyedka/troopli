@@ -26,3 +26,7 @@ gem 'capybara-rails',           group: [:test, :development]
 gem 'simplecov',                require: false, group: :test
 
 gem 'faker'
+
+# Makes it easier to deploy to heroku
+
+gem 'rails_12factor',            group: :production
