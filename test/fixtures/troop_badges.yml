@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: troop_badges
+#
+#  id         :integer          not null, primary key
+#  troop_id   :integer
+#  badge_id   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 valid_troop_badge:
   troop_id: 1
   badge_id: 1

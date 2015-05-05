@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: troops
+#
+#  id                   :integer          not null, primary key
+#  name                 :string(255)
+#  description          :text
+#  age_level            :integer
+#  created_at           :datetime
+#  updated_at           :datetime
+#  leader_id            :integer
+#  picture_file_name    :string(255)
+#  picture_content_type :string(255)
+#  picture_file_size    :integer
+#  picture_updated_at   :datetime
+#
+
 class Troop < ActiveRecord::Base
   belongs_to :leader, class_name: 'Member'
   has_many :events

@@ -1,0 +1,18 @@
+<div id="searchModal" class="modal hide fade"> 
+  <%= form_tag('/search', method: :post, class: 'form-horizontal') do %>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Search</h3>
+    </div>
+    
+    <div class="modal-body"> 
+        <%= text_field_tag 'badge', nil, placeholder: 'Enter Search Term', class: 'input-xlarge span5', style: 'display:none' %>
+        <%= text_field_tag 'term', nil, placeholder: 'Enter Search Term', class: 'input-xlarge span5' %><br><br>
+        <%= select_tag 'type', options_for_select(['Age Level', 'Category', 'Badge'], 'Age Level'), class: 'input-xlarge span5' %>
+    </div>
+    
+    <div class="modal-footer">
+      <%= submit_tag 'Search', class: 'btn btn-success' %>
+    </div>
+  <% end %>
+</div>

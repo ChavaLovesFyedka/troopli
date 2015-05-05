@@ -20,6 +20,12 @@ Rails.application.routes.draw do
     get 'panel', to: "main#panel"
   end
 
+  post 'search/', to: 'search#results'
+  resources :search, only: [:index] do
+    get :autocomplete, :on => :collection
+  end
+  get 'search/:term', to: 'search#results'
+
   get 'pages/about'
   get "pages/blog"
   get "pages/contact" #, :as => 'contact_page'
