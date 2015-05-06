@@ -32,3 +32,5 @@ gem 'faker'
 # Makes it easier to deploy to heroku
 
 gem 'rails_12factor',            group: :production
+
+gem 'will_paginate'

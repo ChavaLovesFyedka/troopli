@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314222752) do
+ActiveRecord::Schema.define(version: 20150505191239) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "badges", force: true do |t|
     t.string   "name"
@@ -31,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150314222752) do
     t.datetime "updated_at"
   end
 
-  add_index "badges_ideas", ["badge_id"], name: "index_badges_ideas_on_badge_id"
-  add_index "badges_ideas", ["idea_id"], name: "index_badges_ideas_on_idea_id"
+  add_index "badges_ideas", ["badge_id"], name: "index_badges_ideas_on_badge_id", using: :btree
+  add_index "badges_ideas", ["idea_id"], name: "index_badges_ideas_on_idea_id", using: :btree
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -48,8 +51,11 @@ ActiveRecord::Schema.define(version: 20150314222752) do
     t.string   "name"
     t.string   "category"
     t.string   "age_level"
+    t.integer  "badge_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_url",   default: ""
+    t.text     "description"
   end
 
   create_table "members", force: true do |t|
@@ -69,8 +75,8 @@ ActiveRecord::Schema.define(version: 20150314222752) do
     t.string   "role",                   default: "member"
   end
 
-  add_index "members", ["email"], name: "index_members_on_email", unique: true
-  add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+  add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
+  add_index "members", ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true, using: :btree
 
   create_table "parsers", force: true do |t|
     t.datetime "created_at"

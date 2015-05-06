@@ -54,6 +54,14 @@ end
                        end_at: Faker::Time.forward(30, :afternoon))
 end
 
+100.times do
+  Idea.create(name: Faker::Lorem.words(2).join(' '),
+              description: Faker::Lorem.paragraph,
+              age_level: ['Senior', 'Junior'].sample,
+              category: 'Fun',
+              badge_id: (1..200).to_a.sample)
+end
+
 #
 
 # MEMBERS

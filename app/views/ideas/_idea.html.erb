@@ -1,0 +1,26 @@
+<table class='span12' id='search-result'>
+  <tr>
+    <td class='span3' rowspan='3'>
+      <% if idea.image_url.eql?('')%>
+        <%= image_tag('no_photo_icon.png', height: '256', width: '256') %>
+      <% else %>
+        <%= image_tag(idea.image_url, height: '256', width: '256') %>
+      <% end %>     
+    </td>
+    <td class='span9'>
+      <b><%= idea.name %></b>
+    </td>
+  </tr>
+    <td class='span9'>
+      <p>
+        <%= raw idea.description %>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<style>
+#search-result.table {
+  border: 2px;
+}
+</style>

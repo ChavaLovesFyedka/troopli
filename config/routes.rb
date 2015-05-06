@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     get 'panel', to: "main#panel"
   end
 
-  post 'search/', to: 'search#results'
+  match 'search/', to: 'search#results', via: [:get, :post]
   resources :search, only: [:index] do
     get :autocomplete, :on => :collection
   end

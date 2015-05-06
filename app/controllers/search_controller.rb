@@ -20,8 +20,8 @@ class SearchController < ApplicationController
     elsif params[:type] == 'Category'
       @ideas = Idea.order(:name).where("category ILIKE ?", "%#{params[:term]}%")
     elsif params[:type] == 'Badge'
-      badge = Badge.order(:name).where("name ILIKE ?", "%#{params[:badge]}%").first
-      @ideas = badge.ideas
+      badge = Badge.order(:name).where("lower(name) = lower(?)", "%#{params[:badge]}%").first
+      @ideas = badge.ideas rescue []
     end
   end
 end
