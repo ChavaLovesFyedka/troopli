@@ -1,19 +1,24 @@
 Rails.application.routes.draw do
-  get 'idea/index'
 
-  get 'idea/show'
+  # get 'idea/index'
 
-  get 'idea/new'
+  # get 'idea/show'
 
-  get 'idea/create'
+  # get 'idea/new'
 
-  get 'idea/edit'
+  # get 'idea/create'
 
-  get 'idea/update'
+  # get 'idea/edit'
 
-  get 'events/show'
+  # get 'idea/update'
 
+  # get 'events/show'
+
+  resources :ideas
+  
   root to: "troops#index"
+
+
   
   devise_for :members
   resources :members, only: [:show, :destroy] do 

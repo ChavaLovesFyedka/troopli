@@ -1,9 +1,10 @@
-class IdeaController < ApplicationController
+class IdeasController < ApplicationController
   def index
     @ideas = Idea.all
   end
 
   def show
+    # @idea = Idea.find(params[:id])
     #@badges = Badge.all
   end
 
@@ -66,7 +67,7 @@ class IdeaController < ApplicationController
   #       @skill = Skill.all
   #       format.html { render action: 'edit' }
   #     end
-  # end
+  end
 
 # private
 
