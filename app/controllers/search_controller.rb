@@ -16,9 +16,9 @@ class SearchController < ApplicationController
 
   def results
     if params[:type] == 'Age Level'
-      @ideas = Idea.order(:name).where("age_level ILIKE ?", "%#{params[:term]}%")
+      @ideas = Idea.order(:name).where("lower(age_level) LIKE lower(?)", "%#{params[:term]}%")
     elsif params[:type] == 'Category'
-      @ideas = Idea.order(:name).where("category ILIKE ?", "%#{params[:term]}%")
+      @ideas = Idea.order(:name).where("lower(category) LIKE lower(?)", "%#{params[:term]}%")
     elsif params[:type] == 'Badge'
       badge = Badge.order(:name).where("lower(name) = lower(?)", "%#{params[:badge]}%").first
       @ideas = badge.ideas rescue []
