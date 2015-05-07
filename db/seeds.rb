@@ -6,7 +6,7 @@ parser.badge_list
 # Ideas
 
 parser = Parser.new("Ideas2.csv")
-parse.idea_list
+parser.idea_list
 
 # ADMIN
 
