@@ -3,6 +3,11 @@
 parser = Parser.new("Patches1.csv")
 parser.badge_list
 
+# Ideas
+
+parser = Parser.new("Ideas2.csv")
+parse.idea_list
+
 # ADMIN
 
 Member.create(email: "admin@example.com", password: "password",
