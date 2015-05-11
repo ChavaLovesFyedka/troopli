@@ -34,3 +34,5 @@ gem 'faker'
 gem 'rails_12factor',            group: :production
 
 gem 'will_paginate'
+
+gem 'quiet_assets',              group: :development
