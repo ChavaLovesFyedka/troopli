@@ -16,15 +16,15 @@ ready = (function() {
 $(document).ready(ready);
 $(document).on('page:load', ready);
 
-$(document).ready(function(){
-  $('#type').change(function(){
-    if($(this).val()=='Badge'){
-      $('#badge').show();
-      $('#term').hide();
-    } else {
-      $('#term').show();
-      $('#badge').hide();
-    }
-  });
-});
+// $(document).ready(function(){
+//   $('#type').change(function(){
+//     if($(this).val()=='Badge'){
+//       $('#badge').show();
+//       $('#term').hide();
+//     } else {
+//       $('#term').show();
+//       $('#badge').hide();
+//     }
+//   });
+// });
 

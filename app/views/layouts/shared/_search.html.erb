@@ -6,13 +6,29 @@
     </div>
     
     <div class="modal-body"> 
-        <%= text_field_tag 'badge', nil, placeholder: 'Enter Search Term', class: 'input-xlarge span5', style: 'display:none' %>
-        <%= text_field_tag 'term', nil, placeholder: 'Enter Search Term', class: 'input-xlarge span5' %><br><br>
-        <%= select_tag 'type', options_for_select(['Age Level', 'Category', 'Badge'], 'Age Level'), class: 'input-xlarge span5' %>
+        <%= text_field_tag 'badge', nil, placeholder: 'Enter Search Term', class: 'input-xlarge span5' %>
+        <br><br>
+        <center>
+          <%= submit_tag 'Search using Badge', class: 'btn btn-success' %>
+          <br>
+          <b>Or</b>
+        </center>
+        <br><br>
+        Select an <b>Age Level</b><br>
+        <% age_level_options.each do |age_level| %>
+          <%= check_box_tag 'age_level[]', age_level -%>
+          <%= age_level %>
+        <% end %><br><br>
+        Select a <b>Category</b><br>
+        <% category_options.each do |category| %>
+          <%= check_box_tag 'category[]', category -%>
+          <%= category %>
+        <% end %>
+        <br><br>
+        <center>
+          <%= submit_tag 'Search via Age and Category', class: 'btn btn-success' %>
+        </center>
     </div>
-    
-    <div class="modal-footer">
-      <%= submit_tag 'Search', class: 'btn btn-success' %>
-    </div>
+
   <% end %>
 </div>
