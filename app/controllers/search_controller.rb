@@ -18,7 +18,11 @@ class SearchController < ApplicationController
     if params[:commit] == 'Search via Age and Category'
       @ideas = Idea.order(:name)
       if params[:age_level].present?
-        @ideas = @ideas.where("age_level in (?)", params[:age_level])
+        if !params[:age_level].include?('All')
+          @ideas = @ideas.where("age_level in (?)", params[:age_level])
+        else
+          @ideas = @ideas.all
+        end
       end
       if params[:category].present?
         @ideas = @ideas.where("category in (?)", params[:category])
