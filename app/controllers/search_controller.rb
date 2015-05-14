@@ -19,6 +19,7 @@ class SearchController < ApplicationController
       @ideas = Idea.order(:name)
       if params[:age_level].present?
         if !params[:age_level].include?('All')
+          params[:age_level] = params[:age_level].push('All')
           @ideas = @ideas.where("age_level in (?)", params[:age_level])
         else
           @ideas = @ideas.all
