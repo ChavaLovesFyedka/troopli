@@ -1,6 +1,6 @@
 <table class='span12' id='search-result'>
-  <tr>
-    <td class='span3' rowspan='3'>
+  <tr style="marign-top:15px">
+    <td class='span3' rowspan='2'>
       <% if idea.image_url.eql?('')%>
         <%= image_tag('no_photo_icon.png', height: '256', width: '256') %>
       <% else %>
@@ -11,10 +11,16 @@
       <b><%= idea.name %></b>
     </td>
   </tr>
+  <tr>
     <td class='span9'>
       <p>
         <%= raw idea.description %>
       </p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan='2'>
+      &nbsp;
     </td>
   </tr>
 </table>
