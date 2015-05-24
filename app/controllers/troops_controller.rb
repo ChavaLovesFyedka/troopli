@@ -5,6 +5,7 @@ class TroopsController < ApplicationController
 
   def index
     @troops = Troop.all
+    render 'index', layout: 'front_page'
   end
 
   def show
