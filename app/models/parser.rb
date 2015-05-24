@@ -14,4 +14,10 @@ class Parser
     end
   end
 
+  def idea_list
+    CSV.foreach(@file_path, headers: true) do |row|
+      Idea.create!(row.to_hash)
+    end
+  end
+
 end

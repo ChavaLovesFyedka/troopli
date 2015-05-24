@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :string(255)
+#  start_at    :datetime
+#  end_at      :datetime
+#  created_at  :datetime
+#  updated_at  :datetime
+#  troop_id    :integer
+#
+
 class Event < ActiveRecord::Base
   belongs_to :troop
 
