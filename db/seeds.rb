@@ -3,6 +3,11 @@
 parser = Parser.new("Patches1.csv")
 parser.badge_list
 
+# Ideas
+
+parser2 = Parser.new("Ideas2.csv")
+parser2.idea_list
+
 # ADMIN
 
 Member.create(email: "admin@example.com", password: "password",
@@ -53,8 +58,6 @@ end
                        start_at: Faker::Time.forward(30, :morning),
                        end_at: Faker::Time.forward(30, :afternoon))
 end
-
-#
 
 # MEMBERS
 

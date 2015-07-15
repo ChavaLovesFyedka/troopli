@@ -11,9 +11,8 @@
 #  updated_at :datetime
 #
 
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  category: MyString
-  age_level: MyString
+class Idea < ActiveRecord::Base
+  belongs_to :badge
+	#has_many: badges, through: badges_ideas
+	#has_many: age_levels
+end
