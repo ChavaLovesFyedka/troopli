@@ -1,13 +1,7 @@
 <div class="container">
   <p class="navbar-text pull-right pad">
-  <% if member_signed_in? %>
-    Logged in as <strong><%= current_member.email %></strong>.
-    <%= link_to 'Edit profile', edit_member_registration_path, :class => 'navbar-link' %> |
-    <%= link_to "Logout", destroy_member_session_path, method: :delete, :class => 'navbar-link'  %>
-  <% else %>
-    <%= link_to "Sign up", new_member_registration_path, :class => 'navbar-link'  %> |
-    <%= link_to "Login", new_member_session_path, :class => 'navbar-link'  %>
-  <% end %>
+    <%= link_to "Sign up", "new_member_registration_path", :class => 'navbar-link'  %>
+  </p>
 </div>
 
   <div class="navbar navbar-fixed-top">
@@ -17,24 +11,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>    
-          <a class="brand" href="index.html">Troopli</a>
+          </a>
+          <a class="brand" href="/">Troopli</a>
       <div class="nav-collapse collapse">
             <ul class="nav pull-right animated">
         <li><%= link_to 'Home', root_path %></li>
-        <li><a href="#searchModal" data-toggle="modal">Search</a></li>
-        <li><a href="/pages/about">About</a></li>     
+        <li><a href="/pages/about">About</a></li>
         <li><a href="http://www.troopli.wordpress.com">Blog</a></li>
         <li><a href="http://troopli.freeforums.net">Message Board</a></li>
-        <% if not member_signed_in? %>
-        <li><%= link_to "Login", new_member_session_path, :class => 'navbar-link'  %></li>
-        <li><%= link_to "Sign up", new_member_registration_path, :class => 'navbar-link'  %></li>
-        <% end %>
-        <li><a href="/pages/contact">Contact</a></li> 
+        <li><%= link_to "Sign up", "new_member_registration_path", :class => 'navbar-link'  %></li>
+        <li><a href="/pages/contact">Contact</a></li>
 
         </li>
             </ul>
       </div>
         </div>
       </div>
-    </div>  
+    </div>

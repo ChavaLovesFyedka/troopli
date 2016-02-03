@@ -1,25 +1,7 @@
 Rails.application.routes.draw do
-  #devise_for :users
   get 'events/show'
 
-  root to: "troops#index"
-  
-  #devise_for :members
-  resources :members, only: [:show, :destroy] do 
-    member do 
-      put :approve, :reject
-    end
-  end
-
-  post '/leader-invitation', to: 'members#send_leader_invitation'  
-  resources :troops do 
-    resource :calendar, only: [:show]
-    resources :events
-  end
-
-  namespace :admin do 
-    get 'panel', to: "main#panel"
-  end
+  root to: "search#index"
 
   match 'search/', to: 'search#results', via: [:get, :post]
   resources :search, only: [:index] do
@@ -37,12 +19,8 @@ Rails.application.routes.draw do
   get "pages/meeting"
   get "pages/newsletter"
   get "pages/scoutlist"
- 
+
   # match '/gallery' => 'pages#gallery'
   # match '/about' => 'pages#about'
   # match '/contact' => 'pages#contact'
-
-get 'auth/:provider/callback', to: 'sessions#create'
-get 'logout', to: 'sessions#destroy'
-
 end
