@@ -23,4 +23,8 @@ test:
 
 production:
   <<: *default
-  database: troopli_production
+  host: ec2-107-21-218-93.compute-1.amazonaws.com
+  database: d5tvbl0p56mf4h
+  user: ybmvrcyufihjgf
+  port: 5432
+  password: P1qy35fm4zJtDtVV3xYBvXJUP5
