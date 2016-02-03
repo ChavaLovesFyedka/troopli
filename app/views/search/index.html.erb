@@ -9,9 +9,12 @@
 
         <%= submit_tag 'Search using Badge', class: 'btn btn-success' %>
         <br>
-        <b>Or</b>
-      </center>
-      <br><br>
+        <br>
+        <br>
+        <center>
+          <b>Or</b>
+        </center>
+      <br>
       Select an <b>Age Level</b><br>
       <% age_level_options.each do |age_level| %>
         <%= check_box_tag 'age_level[]', age_level -%>

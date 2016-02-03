@@ -1,6 +1,6 @@
 <div class="container">
   <p class="navbar-text pull-right pad">
-    <%= link_to "Sign up", "new_member_registration_path", :class => 'navbar-link'  %>
+    <%= link_to "Join", "https://scouts.campusgroups.com/login", :class => 'navbar-link'  %>
   </p>
 </div>
 
@@ -12,14 +12,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">Troopli</a>
+          <a class="brand" href="/">
+            <img src="logo.png">
+            Troopli
+          </a>
       <div class="nav-collapse collapse">
             <ul class="nav pull-right animated">
         <li><%= link_to 'Home', root_path %></li>
         <li><a href="/pages/about">About</a></li>
-        <li><a href="http://www.troopli.wordpress.com">Blog</a></li>
+        <li><a href="http://troopli.wordpress.com">Blog</a></li>
         <li><a href="http://troopli.freeforums.net">Message Board</a></li>
-        <li><%= link_to "Sign up", "new_member_registration_path", :class => 'navbar-link'  %></li>
+        <li><%= link_to "Join", "https://scouts.campusgroups.com/login", :class => 'navbar-link'  %></li>
         <li><a href="/pages/contact">Contact</a></li>
 
         </li>
