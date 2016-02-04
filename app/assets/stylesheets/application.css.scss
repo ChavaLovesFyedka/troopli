@@ -6,6 +6,11 @@
 
 .ui-autocomplete { z-index:2147483647; }
 
-.btn-search {
+a.btn.btn-primary.btn-action.btn-large.btn-search {
+  color: white;
   font-weight: 900;
+}
+
+#main_container {
+    padding: 20px;
 }
